@@ -1,0 +1,49 @@
+#search {
+  width: 100%;
+  height: 20%;
+}
+
+#searchForm {
+  width: 70%;
+}
+
+#inputWindow {
+  width: 50%;
+  height: 20%;
+  font-size: 14px;
+  margin: 5% 0% 5% 20%;
+}
+
+#searchButton {
+  width: 5%;
+  height: 25%;
+}
+
+@media screen and (max-width: 894px) {
+  #searchForm {
+    width: 100%;
+  }
+  #inputWindow {
+    margin: 10% 0% 5% 5%;
+    height: 20%;
+    width: 60%;
+  }
+
+  #searchButton {
+    width: 10%;
+    height: 25%;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  #inputWindow {
+    margin: 10% 0% 10% 5%;
+    height: 30%;
+    width: 60%;
+  }
+
+  #searchButton {
+    width: 10%;
+    height: 35%;
+  }
+}

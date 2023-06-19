@@ -1,0 +1,36 @@
+#card_wrap {
+  width: 90%;
+  padding: 5%;
+  height: 100%;
+  border: 1px solid black;
+  display: inline-block;
+  border-radius: 25px;
+  background-color: whitesmoke;
+}
+
+#addToCartButton {
+  width: 70%;
+  padding: 5%;
+  background-color: #4360d3;
+  color: white;
+  font-family: "Kanit", sans-serif;
+  border: none;
+  transition-property: background-color;
+  transition-property: color;
+  transition-duration: 0.3s;
+  margin: 5% 13% 5% 10%;
+  display: block;
+  border-radius: 2px;
+}
+
+#addToCartButton:hover {
+  background-color: gray;
+  color: black;
+}
+
+#productImg {
+  width: 70%;
+  padding: 3%;
+  border: 1px solid gray;
+  background-color: white;
+}

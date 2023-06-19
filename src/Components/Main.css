@@ -1,0 +1,21 @@
+#threeProducts {
+  width: 70%;
+  margin: 3% auto 1% auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3%;
+  row-gap: 50px;
+  align-items: flex-start;
+}
+
+@media screen and (max-width: 894px) {
+  #threeProducts {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 767px) {
+  #threeProducts {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}

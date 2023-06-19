@@ -1,0 +1,36 @@
+#App {
+  text-align: center;
+  width: 100%;
+}
+
+.container_row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: stretch;
+}
+
+.container_column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: stretch;
+}
+
+#aside_main {
+  width: 100%;
+  justify-content: flex-start;
+  align-items: start;
+  margin-bottom: 5%;
+}
+
+@media screen and (max-width: 894px) {
+  .container_column {
+    flex-wrap: wrap;
+  }
+
+  .container_row {
+    flex-wrap: wrap;
+  }
+}

@@ -1,0 +1,66 @@
+#aside {
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 20%;
+  height: 20%;
+  margin-left: 3%;
+  margin-top: 3%;
+  border: 1px solid black;
+  background-color: rgb(192, 191, 191);
+  border-radius: 25px;
+}
+
+#aside > button {
+  border: none;
+  background-color: rgb(192, 191, 191);
+  font-family: "Kanit", sans-serif;
+  color: #15214e;
+  font-size: 16px;
+}
+
+.asideElements:link,
+#aside > button {
+  margin: 5%;
+  width: 70%;
+  text-decoration: none;
+  font-weight: bold;
+  transition-property: color;
+  transition-duration: 0.5s;
+}
+
+.asideElements:visited,
+#aside > button:visited {
+  color: #15214e;
+}
+
+.asideElements:hover,
+#aside > button:hover {
+  color: #0087a1;
+}
+
+.asideElements:active,
+#aside > button:active {
+  color: #0087a1;
+}
+
+@media screen and (max-width: 894px) {
+  #aside {
+    width: 70%;
+    margin-left: 10%;
+    margin-right: 10%;
+    padding: 5%;
+    display: block;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  #aside {
+    padding: 1%;
+    margin-left: 15%;
+  }
+
+  #asideElements {
+    width: 70%;
+    display: block;
+  }
+}

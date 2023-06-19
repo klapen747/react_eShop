@@ -1,0 +1,58 @@
+#nav {
+  justify-content: flex-end;
+  width: 100%;
+  height: 30px;
+  background-color: #020f42;
+}
+
+.logo {
+  padding-right: 40%;
+}
+
+#nav > a:link {
+  margin-right: 5%;
+  width: 15%;
+  text-decoration: none;
+  color: whitesmoke;
+  font-weight: bold;
+  transition-property: color;
+  transition-duration: 0.3s;
+}
+
+#nav > a:visited {
+  color: whitesmoke;
+}
+
+#nav > a:hover {
+  color: #0087a1;
+}
+
+#nav > a:active {
+  color: #0087a1;
+}
+
+@media screen and (max-width: 894px) {
+  #nav {
+    flex-wrap: wrap;
+  }
+
+  .logo {
+    padding-right: 10%;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  #nav {
+    flex-wrap: wrap;
+  }
+
+  .logo {
+    padding-right: 0%;
+    display: block;
+  }
+
+  #nav > a {
+    width: 100%;
+    display: block;
+  }
+}
