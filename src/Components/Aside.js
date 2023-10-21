@@ -44,7 +44,12 @@ export default function MyAside({ products }) {
         <a href="/" className="asideElements">
           <i class="fa-solid fa-cart-shopping"></i> MY CART
         </a>
-        <a href="/" className="asideElements" onClick={toggleFilter}>
+        <a
+          href="/"
+          className="asideElements"
+          onClick={toggleFilter}
+          style={{ color: "#0087a1" }}
+        >
           <i class="fa-sharp fa-solid fa-filter"></i> FILTERS
         </a>
         <form className="container_column" id="filterOptions">
@@ -53,7 +58,9 @@ export default function MyAside({ products }) {
             <li>
               <label>Price:</label>
             </li>
-            <label>Category:</label>
+            <li>
+              <label>Category:</label>
+            </li>
             <select name="category" multiple>
               {products.map(function (product, index) {
                 return (

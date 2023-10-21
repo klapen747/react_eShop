@@ -8,7 +8,7 @@ class MyNav extends Component {
         <a href="#" className="logo">
           <i class="fa-solid fa-store"></i>PENNIEZ
         </a>
-        <a href="/">HOME</a>
+        <a href="/">LOG IN</a>
         <a href="/">ABOUT US</a>
         <a href="/">CONTACT</a>
       </nav>
