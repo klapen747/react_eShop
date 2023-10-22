@@ -51,8 +51,6 @@
   margin-bottom: 10%;
   padding: 3%;
   color: #0087a1;
-  justify-content: flex-end;
-  text-align: left;
 }
 
 select {
@@ -71,6 +69,17 @@ select > option {
 select > option:hover {
   color: white;
   background-color: #15214e;
+}
+
+#resetFilters {
+  transition: color 0.3s;
+  color: #15214e;
+  margin-left: 20%;
+}
+
+#resetFilters:hover {
+  color: black;
+  font-weight: bolder;
 }
 
 @media screen and (max-width: 894px) {

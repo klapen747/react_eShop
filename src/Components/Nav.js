@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "./Nav.css";
 
-class MyNav extends Component {
+export default class MyNav extends Component {
   render() {
     return (
       <nav className="container_row" id="nav">
@@ -15,5 +15,3 @@ class MyNav extends Component {
     );
   }
 }
-
-export default MyNav;

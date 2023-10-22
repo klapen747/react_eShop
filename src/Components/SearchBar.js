@@ -13,9 +13,7 @@ class MySearchBar extends Component {
             autocomplete="off"
             autofocus="on"
           />
-          <button id="searchButton">
-            <i class="fa-solid fa-magnifying-glass"></i>
-          </button>
+          <input type="submit" value="Search" id="searchButton" />
         </form>
       </div>
     );

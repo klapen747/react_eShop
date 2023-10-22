@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import "./Aside.css";
 
-export default function MyAside({ products, props }) {
+export default function MyAside({ products, onCategoryChange }) {
   const [filterOpened, setFilterOpened] = useState(false);
-  const [selectedCategory, setSelectedCategory] = useState("");
+  let [selectedCategory, setSelectedCategory] = useState("");
   const [listOfCategories, setListOfCategories] = useState([]);
 
   useEffect(() => {
@@ -21,10 +21,21 @@ export default function MyAside({ products, props }) {
     console.log(selectedCategory);
   }, [selectedCategory]);
 
+  const handleCategoryChange = (event) => {
+    const selectedCategory = event.target.value;
+    onCategoryChange(selectedCategory);
+  };
+
   const selectCategoryHandler = (event) => {
     setSelectedCategory(event.target.value);
     console.log(listOfCategories);
   };
+
+  function resetFilters(event) {
+    event.preventDefault();
+    setSelectedCategory(null);
+    onCategoryChange(null);
+  }
 
   function toggleFilter(event) {
     event.preventDefault();
@@ -68,19 +79,16 @@ export default function MyAside({ products, props }) {
         >
           <i class="fa-sharp fa-solid fa-filter"></i> FILTERS
         </a>
-        <form className="container_column" id="filterOptions">
+        <form id="filterOptions" className="column_container">
           <p>Filter by:</p>
           <ul>
-            <li>
-              <label>Price:</label>
-            </li>
             <li>
               <label>Category:</label>
             </li>
             <select
+              onChange={handleCategoryChange}
               name="category"
               value={selectedCategory}
-              onChange={selectCategoryHandler}
               multiple
             >
               {listOfCategories.map(function (category, index) {
@@ -92,6 +100,9 @@ export default function MyAside({ products, props }) {
               })}
             </select>
           </ul>
+          <label id="resetFilters" onClick={resetFilters}>
+            RESET FILTERS
+          </label>
         </form>
       </nav>
     );

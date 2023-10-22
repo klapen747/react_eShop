@@ -9,6 +9,12 @@ import MySearchBar from "./Components/SearchBar";
 //Ovo je wrapper u koji se sve komponente salju i u kojem se one slazu.
 function App() {
   const [products, setProducts] = useState([]);
+  let [selectedCategory, setSelectedCategory] = useState(null);
+  /*let priceRanges = getPriceRanges(products);*/
+
+  const handleCategoryChange = (category) => {
+    setSelectedCategory(category);
+  };
 
   useEffect(() => {
     fetch("https://fakestoreapi.com/products")
@@ -21,14 +27,32 @@ function App() {
       });
   }, []);
 
+  /*function getPriceRanges(products) {
+    let max = 0;
+    let priceRanges = [];
+    function rangesSlicing(rangesArray, max, res) {
+      if (max <= 0) {
+        return rangesArray;
+      }
+      rangesArray.push(rangesSlicing(rangesArray, max - res, res));
+    }
+    products.map(function (product, index) {
+      if (product.price > max) {
+        max = product.price;
+      }
+    });
+    let res = max / 3;
+    return (priceRanges = rangesSlicing(priceRanges, max, res));
+  }*/
+
   return (
     <div className="container_column" id="App">
       <MyNav />
       <MyHeader />
       <MySearchBar />
       <div className="container_row" id="aside_main">
-        <MyAside products={products} />
-        <MyMain products={products} />
+        <MyAside products={products} onCategoryChange={handleCategoryChange} />
+        <MyMain products={products} selectedCategory={selectedCategory} />
       </div>
     </div>
   );
