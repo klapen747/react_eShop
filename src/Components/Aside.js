@@ -1,14 +1,30 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./Aside.css";
 
-export default function MyAside({ products }) {
-  /*constructor(props) {
-    super(props);
-    this.state = {
-      filterOPened: false,
-    };
-  }*/
+export default function MyAside({ products, props }) {
   const [filterOpened, setFilterOpened] = useState(false);
+  const [selectedCategory, setSelectedCategory] = useState("");
+  const [listOfCategories, setListOfCategories] = useState([]);
+
+  useEffect(() => {
+    fetch("https://fakestoreapi.com/products/categories")
+      .then((response) => response.json())
+      .then((data) => {
+        setListOfCategories(data);
+      })
+      .catch((error) => {
+        console.log("Error fetching data:", error);
+      });
+  }, []);
+
+  useEffect(() => {
+    console.log(selectedCategory);
+  }, [selectedCategory]);
+
+  const selectCategoryHandler = (event) => {
+    setSelectedCategory(event.target.value);
+    console.log(listOfCategories);
+  };
 
   function toggleFilter(event) {
     event.preventDefault();
@@ -61,11 +77,16 @@ export default function MyAside({ products }) {
             <li>
               <label>Category:</label>
             </li>
-            <select name="category" multiple>
-              {products.map(function (product, index) {
+            <select
+              name="category"
+              value={selectedCategory}
+              onChange={selectCategoryHandler}
+              multiple
+            >
+              {listOfCategories.map(function (category, index) {
                 return (
-                  <option key={index} value={product.category}>
-                    {product.category}
+                  <option key={index} value={category}>
+                    {category}
                   </option>
                 );
               })}
@@ -75,18 +96,4 @@ export default function MyAside({ products }) {
       </nav>
     );
   }
-
-  //{elements.map(function(value, index) {
-  //return <li key={index}>{value}</li>
-  //})}
 }
-
-/*<select name="category" multiple>
-                {products.map(function (product, index) {
-                  return (
-                    <option key={index} value={product.category}>
-                      {this.product.category}
-                    </option>
-                  );
-                })}
-              </select>*/
